@@ -1,0 +1,19 @@
+﻿@model Departamento
+
+<a asp-controller="Departamentos"
+   asp-action="Index">
+    Volver al listado
+</a>
+<hr/>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        Número: @Model.Numero
+    </li>
+    <li class="list-group-item-primary">
+        Nombre: @Model.Nombre
+    </li>
+    <li class="list-group-item-warning">
+        Localidad: @Model.Localidad
+    </li>
+</ul>

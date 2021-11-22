@@ -1,0 +1,44 @@
+﻿@model List<Departamento>
+
+<h1>Lista departamentos</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>NUMERO</th>
+            <th>NOMBRE</th>
+            <th>LOCALIDAD</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Departamento dept in Model)
+        {
+            <tr>
+                <td>@dept.Numero</td>
+                <td>@dept.Nombre</td>
+                <td>@dept.Localidad</td>
+                <td>
+                    <a class="btn btn-success"
+                       asp-controller="Departamentos"
+                       asp-action="Details"
+                       asp-route-iddepartamento="@dept.Numero">
+                        Detalles
+                    </a>
+                    <a class="btn btn-info"
+                       asp-controller="Departamentos"
+                       asp-action="Edit"
+                       asp-route-iddepartamento="@dept.Numero">
+                        Editar
+                    </a>
+                    <a class="btn btn-danger"
+                       asp-controller="Departamentos"
+                       asp-action="Delete"
+                       asp-route-iddepartamento="@dept.Numero">
+                        Eliminar
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
